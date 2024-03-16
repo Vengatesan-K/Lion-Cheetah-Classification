@@ -11,8 +11,9 @@ from typing import Any
 import base64
 
 
+
 @ensure_annotations
-def read_yaml(path_to_yaml:Path) -> ConfigBox:
+def read_yaml(path_to_yaml: Path) -> ConfigBox:
     """reads yaml file and returns
 
     Args:
@@ -25,7 +26,6 @@ def read_yaml(path_to_yaml:Path) -> ConfigBox:
     Returns:
         ConfigBox: ConfigBox type
     """
-
     try:
         with open(path_to_yaml) as yaml_file:
             content = yaml.safe_load(yaml_file)
@@ -36,6 +36,8 @@ def read_yaml(path_to_yaml:Path) -> ConfigBox:
     except Exception as e:
         raise e
     
+
+
 @ensure_annotations
 def create_directories(path_to_directories: list, verbose=True):
     """create list of directories
@@ -62,6 +64,8 @@ def save_json(path: Path, data: dict):
         json.dump(data, f, indent=4)
 
     logger.info(f"json file saved at: {path}")
+
+
 
 
 @ensure_annotations
@@ -130,4 +134,4 @@ def decodeImage(imgstring, fileName):
 
 def encodeImageIntoBase64(croppedImagePath):
     with open(croppedImagePath, "rb") as f:
-        return base64.b64encode(f.read())    
+        return base64.b64encode(f.read())
