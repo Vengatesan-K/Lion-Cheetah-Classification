@@ -1,5 +1,5 @@
 import os
-from  box.exceptions import BoxValueError
+from box.exceptions import BoxValueError
 import yaml
 from cnnClassifier import logger
 import json
@@ -62,8 +62,6 @@ def save_json(path: Path, data: dict):
         json.dump(data, f, indent=4)
 
     logger.info(f"json file saved at: {path}")
-
-
 
 
 @ensure_annotations
